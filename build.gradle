@@ -75,3 +75,14 @@ task unitTest(type: Test) {
     }
 }
 
+test {
+    useJUnit {
+        includeCategories 'com.example.UnitTest'
+    }
+}
+
+tasks.withType(Test) {
+    scanForTestClasses = false
+    include "*Test.class" // whatever Ant pattern matches your test class files
+}
+
