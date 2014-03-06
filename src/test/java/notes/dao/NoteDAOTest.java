@@ -29,7 +29,7 @@ public class NoteDAOTest {
         note.setText("poznamka");
         noteDAO.insertNote(note);
         assertEquals("poznamka", noteDAO.listNotes().get(0).getText());
-        assertEquals(3, noteDAO.listNotes().size()); 
+        assertEquals(1, noteDAO.listNotes().size()); 
     }
 
 }
