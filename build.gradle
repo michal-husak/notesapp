@@ -88,11 +88,11 @@ uploadArchives {
                 username "lukas"
                 password "lukas"
             }
-            url "http://192.168.1.100:8081/nexus/content/repositories/snapshots"
+            url "http://192.168.1.120:8081/nexus/content/repositories/snapshots"
         }
     }
 }
 
-group='sk.lukas.notesapp'
-version = '0.0.1.SNAPSHOT'
+group='sk.lukas'
+version = '0.0.2.SNAPSHOT'
 
