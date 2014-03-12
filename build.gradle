@@ -10,14 +10,15 @@ apply plugin: 'eclipse'
 apply plugin: 'war'
 apply plugin: 'jetty'
 
-jar {
-    baseName = 'gs-rest-service'
+war {
+    baseName = 'rest-service'
     version =  '0.1.0'
 }
 
 repositories {
-    mavenCentral()
+    maven { url "http://192.168.1.100:8081/nexus/content/repositories/central/" }
     maven { url "http://repo.spring.io/libs-snapshot" }
+    mavenCentral()
 }
 
 dependencies {
@@ -34,14 +35,12 @@ dependencies {
    			"org.codehaus.jackson:jackson-mapper-asl:1.9.12",
    			"org.springframework:spring-webmvc:4.0.0.RELEASE",
    			"javax.servlet:javax.servlet-api:3.0.1",
+            "hsqldb:hsqldb:1.8.0.10",
    			"org.hibernate:hibernate-core:4.3.0.Final",
    			"org.hibernate:hibernate-entitymanager:4.3.0.Final",
-   			"hsqldb:hsqldb:1.8.0.10",
-            "org.seleniumhq.selenium:selenium-firefox-driver:2.37.1",
-            "org.seleniumhq.selenium:selenium-java:2.37.1",
-            "org.seleniumhq.selenium:selenium-server:2.37.1",
             "net.sourceforge.htmlunit:htmlunit:2.13",
-            "com.jayway.restassured:rest-assured:2.3.0")
+            "com.jayway.restassured:rest-assured:2.3.0",
+            "postgresql:postgresql:9.1-901.jdbc4")
    	testCompile("org.hamcrest:hamcrest-all:1.3",
                 "org.springframework:spring-test:4.0.0.RELEASE",
    				"org.mockito:mockito-all:1.9.5",
@@ -81,8 +80,19 @@ test {
     }
 }
 
-tasks.withType(Test) {
-    scanForTestClasses = false
-    include "*Test.class" // whatever Ant pattern matches your test class files
+
+uploadArchives {
+    repositories {
+        maven {
+            credentials {
+                username "lukas"
+                password "lukas"
+            }
+            url "http://192.168.1.100:8081/nexus/content/repositories/snapshots"
+        }
+    }
 }
+
+group='sk.lukas.notesapp'
+version = '0.0.1.SNAPSHOT'
 

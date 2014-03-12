@@ -28,23 +28,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @RunWith(MockitoJUnitRunner.class)
 public class NoteControllerTest {
 
-  /*  @Configuration
-    static class Config {
- 
-        @Bean
-        public  NoteService noteService() {
-            NoteService noteServiceMock = Mockito.mock(NoteService.class);
-            return noteServiceMock;
-        }
-        
-        @Bean
-        public NoteController noteController()
-        {
-            NoteController noteController=new NoteController(noteService());
-            return noteController;
-        }
-        
-    }*/
     @Mock
     NoteService noteServiceMock;  
     
