@@ -18,14 +18,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
   <servlet>
     <servlet-name>mvc-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextClass</param-name>
-      <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
-    </init-param>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>webconfig</param-value>
-    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
@@ -34,5 +26,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
     <servlet-name>mvc-dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  
 
 </web-app>
