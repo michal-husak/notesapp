@@ -13,7 +13,6 @@
 	<aop:aspectj-autoproxy />
 	<context:component-scan base-package="notes.dao, notes.domain, notes.service" />
 	<tx:annotation-driven />
-	<context:property-placeholder location="file:///tmp/db.properties" />
 	
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
