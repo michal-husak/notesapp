@@ -11,12 +11,11 @@ apply plugin: 'war'
 apply plugin: 'jetty'
 
 war {
-    baseName = 'rest-service'
-    version =  '0.1.0'
+    baseName = 'ROOT'
 }
 
 repositories {
-    maven { url "http://192.168.1.100:8081/nexus/content/repositories/central/" }
+    maven { url "http://192.168.1.120:8081/nexus/content/repositories/central/" }
     maven { url "http://repo.spring.io/libs-snapshot" }
     mavenCentral()
 }
@@ -76,7 +75,7 @@ task unitTest(type: Test) {
 
 test {
     useJUnit {
-        includeCategories 'com.example.UnitTest'
+        includeCategories 'notes.testcategories.UnitTest'
     }
 }
 

@@ -52,7 +52,7 @@ public class NoteControllerTest {
     public void getTest() throws Exception {
         //System.out.println(noteServiceMock.getAllNotes());
         mockMvc.perform(get("/notes")).andExpect(status().isOk())
-        .andExpect(content().contentType(new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"))))
+        .andExpect(content().contentType(new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype())))
         ;
         
     }
