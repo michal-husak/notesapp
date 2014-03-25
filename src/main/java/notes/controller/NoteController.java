@@ -20,7 +20,6 @@ public class NoteController {
     @Autowired
     private NoteService noteService;
     
-    
     @RequestMapping(value = "/notes", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
     public java.util.List<Note> getAll()
