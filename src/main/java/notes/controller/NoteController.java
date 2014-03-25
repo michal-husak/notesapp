@@ -41,7 +41,5 @@ public class NoteController {
     public void setNoteService(NoteService noteService) {
         this.noteService = noteService;
     }
-    
-    
 
 }
