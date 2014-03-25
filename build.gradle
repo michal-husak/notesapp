@@ -59,27 +59,6 @@ jettyStop {
 	stopKey = 2
 }
 
-task deploymentTest(type: Test) {
-    useJUnit {
-        includeCategories 'notes.testcategories.DeployTest'
-        excludeCategories 'notes.testcategories.UnitTest'
-    }
-}
-
-task unitTest(type: Test) {
-    useJUnit {
-        includeCategories 'notes.testcategories.UnitTest'
-        excludeCategories 'notes.testcategories.DeployTest'
-    }
-}
-
-test {
-    useJUnit {
-        includeCategories 'notes.testcategories.UnitTest'
-    }
-}
-
-
 uploadArchives {
     repositories {
         maven {
